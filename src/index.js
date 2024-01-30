@@ -1,4 +1,4 @@
-import { readFile, getExtension } from './utils.js';
+import { readFile, getExtension, getDiff } from './utils.js';
 import getParse from './parser.js';
 
 const genDiff = (filePath1, filePath2) => {
@@ -8,7 +8,7 @@ const genDiff = (filePath1, filePath2) => {
   const extensionFile2 = getExtension(filePath2);
   const parseFile1 = getParse(dataFile1, extensionFile1);
   const parseFile2 = getParse(dataFile2, extensionFile2);
-  return `${parseFile1.host} ${parseFile2.verbose}!!!`;
+  return getDiff(parseFile1, parseFile2);
 };
 
 export default genDiff;
