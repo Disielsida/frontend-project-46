@@ -4,4 +4,4 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/6880ab95092b68885319/maintainability)](https://codeclimate.com/github/Disielsida/frontend-project-46/maintainability)
 
 ## Example
-[![function working](img/workingn.png)](https://asciinema.org/a/p7IYqxOVDKigA1CSb5QdgVCwx)
+[![function working](img/working.png)](https://asciinema.org/a/p7IYqxOVDKigA1CSb5QdgVCwx)
