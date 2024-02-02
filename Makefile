@@ -12,3 +12,4 @@ gendiff:
 
 test:
 	npx jest
+
