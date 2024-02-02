@@ -5,5 +5,7 @@
 
 [![hello-world](https://github.com/Disielsida/frontend-project-46/actions/workflows/check-project.yml/badge.svg)](https://github.com/Disielsida/frontend-project-46/actions/workflows/check-project.yml)
 
+[![Test Coverage](https://api.codeclimate.com/v1/badges/6880ab95092b68885319/test_coverage)](https://codeclimate.com/github/Disielsida/frontend-project-46/test_coverage)
+
 ## Example
 [![function working](img/working.png)](https://asciinema.org/a/p7IYqxOVDKigA1CSb5QdgVCwx)
