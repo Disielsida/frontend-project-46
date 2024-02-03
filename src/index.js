@@ -1,5 +1,5 @@
 import { readFile, getExtension, getDiff } from './utils.js';
-import getParse from './parser.js';
+import getParse from './parsers.js';
 
 const genDiff = (filePath1, filePath2) => {
   const dataFile1 = readFile(filePath1);
