@@ -12,3 +12,6 @@
 
 ## Example with yaml/yml
 [![function working with yaml/yml](img/working_yaml.png)](https://asciinema.org/a/p7IYqxOVDKigA1CSb5QdgVCwx)
+
+## Example with nested structures with stylish format 
+[![function working with stylish](img/nested.png)](https://asciinema.org/a/p7IYqxOVDKigA1CSb5QdgVCwx)
