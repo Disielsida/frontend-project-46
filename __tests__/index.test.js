@@ -9,10 +9,10 @@ const currentDirName = path.dirname(currentFileName);
 const getFixturePath = (fileName) => path.join(currentDirName, '..', '__fixtures__', fileName);
 const readFixture = (fileName) => fs.readFileSync(getFixturePath(fileName), 'utf-8');
 
-test("gendiffs's main flow json", () => {
-  expect(genDiff(getFixturePath('file1.json'), getFixturePath('file2.json'))).toEqual(readFixture('expected_file_json.txt'));
+test("gendiffs's main flow with json", () => {
+  expect(genDiff(getFixturePath('file1.json'), getFixturePath('file2.json'))).toEqual(readFixture('expected_file_stylish.txt'));
 });
 
-test("gendiffs's main flow yaml/yml", () => {
-  expect(genDiff(getFixturePath('file1.yaml'), getFixturePath('file2.yaml'))).toEqual(readFixture('expected_file_yaml.txt'));
+test("gendiffs's main flow with yaml/yml", () => {
+  expect(genDiff(getFixturePath('file1.yaml'), getFixturePath('file2.yaml'))).toEqual(readFixture('expected_file_stylish.txt'));
 });

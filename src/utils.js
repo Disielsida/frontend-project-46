@@ -1,6 +1,6 @@
+/* eslint-disable no-unused-vars */
 import fs from 'fs';
 import path from 'path';
-import _ from 'lodash';
 
 const readFile = (filePath) => {
   const workDir = process.cwd();
@@ -10,22 +10,31 @@ const readFile = (filePath) => {
 
 const getExtension = (filePath) => filePath.split('.')[1];
 
-const getDiff = (obj1, obj2) => {
-  const keys = _.union(Object.keys(obj1), Object.keys(obj2));
-  const sortedKeys = _.sortBy(keys);
-  const diffLines = sortedKeys.map((key) => {
-    if (_.has(obj1, key) && _.has(obj2, key)) {
-      if (obj1[key] === obj2[key]) {
-        return `    ${key}: ${obj1[key]}`;
-      }
-      return `  - ${key}: ${obj1[key]}\n  + ${key}: ${obj2[key]}`;
-    }
-    if (_.has(obj1, key)) {
-      return `  - ${key}: ${obj1[key]}`;
-    }
-    return `  + ${key}: ${obj2[key]}`;
-  });
-  return `{\n${diffLines.join('\n')}\n}`;
-};
-
-export { readFile, getExtension, getDiff };
+const array = [
+  {
+    key: 'common',
+    children: [
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object],
+      [Object],
+    ],
+    status: 'nested',
+  },
+  {
+    key: 'group1',
+    children: [[Object], [Object], [Object]],
+    status: 'nested',
+  },
+  {
+    key: 'group2',
+    value: { abc: 12345, deep: [Object] },
+    status: 'added',
+  },
+  {
+    key: 'group3',
+    value: { deep: [Object], fee: 100500 },
+    status: 'deleted',
+  },
+];
+export { readFile, getExtension };
