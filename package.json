@@ -6,7 +6,13 @@
   "main": "src/index.js",
   "scripts": {
     "test": "jest --watch",
-    "coverage": "jest --coverage"
+    "test:coverage": "jest --coverage"
+  },
+  "jest": {
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/coverage/" 
+    ]
   },
   "repository": {
     "type": "git",
