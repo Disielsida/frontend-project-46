@@ -1,42 +1,47 @@
 import _ from 'lodash';
 
+const getSpacing = (depth) => {
+  const space = ' ';
+  const indent = 4;
+  const remover = 2;
+  return space.repeat((depth * indent) - remover);
+};
+
 const getData = (node, depth) => {
-  const separator = '  ';
   if (!_.isPlainObject(node)) {
     return node;
   }
   const keys = Object.keys(node);
-  const result = keys.map((key) => `${separator.repeat(depth + 1)}${key}: ${getData(node[key], depth + 2)}`);
-  return `{\n${result.join('\n')}\n${separator.repeat(depth - 1)}}`;
+  const result = keys.map((key) => `${getSpacing(depth + 1)}  ${key}: ${getData(node[key], depth + 1)}`);
+  return `{\n${result.join('\n')}\n${getSpacing(depth)}  }`;
 };
 
 const getStylish = (diffObject) => {
-  const separator = '  ';
   const iter = (node, depth) => {
     const lines = Object.entries(node).map(([key, {
       status, value, children, value1, value2,
     }]) => {
       switch (status) {
         case 'nested':
-          return `${separator.repeat(depth)}  ${key}: ${iter(children, depth + 2)}`;
+          return `${getSpacing(depth)}  ${key}: ${iter(children, depth + 1)}\n ${getSpacing(depth)} }`;
         case 'added':
-          return `${separator.repeat(depth)}+ ${key}: ${getData(value, depth + 2)}`;
+          return `${getSpacing(depth)}+ ${key}: ${getData(value, depth)}`;
         case 'deleted':
-          return `${separator.repeat(depth)}- ${key}: ${getData(value, depth + 2)}`;
+          return `${getSpacing(depth)}- ${key}: ${getData(value, depth)}`;
         case 'changed':
           return [
-            `${separator.repeat(depth)}- ${key}: ${getData(value1, depth + 2)}`,
-            `${separator.repeat(depth)}+ ${key}: ${getData(value2, depth + 2)}`,
+            `${getSpacing(depth)}- ${key}: ${getData(value1, depth)}`,
+            `${getSpacing(depth)}+ ${key}: ${getData(value2, depth)}`,
           ].join('\n');
         case 'unchanged':
-          return `${separator.repeat(depth)}  ${key}: ${getData(value, depth + 2)}`;
+          return `${getSpacing(depth)}  ${key}: ${getData(value, depth)}`;
         default:
-          throw new Error(`Unknown type: ${status}`);
+          throw new Error(`Unknown status: ${status}`);
       }
     });
-    return `{\n${lines.join('\n')}\n${separator.repeat(depth - 1)}}`;
+    return `{\n${lines.join('\n')}`;
   };
-  return iter(diffObject, 1);
+  return `${iter(diffObject, 1)}\n}`;
 };
 
 export default getStylish;
