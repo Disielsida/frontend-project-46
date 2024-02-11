@@ -6,7 +6,7 @@
 
 ---
 # Difference Calculator
-
+ 
 ## Example with json
 [![function working with json](img/working.png)](https://asciinema.org/a/p7IYqxOVDKigA1CSb5QdgVCwx)
 

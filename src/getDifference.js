@@ -11,6 +11,7 @@ const getDiff = (object1, object2) => {
   const result = keysUnion.reduce((acc, key) => {
     const value1 = object1[key];
     const value2 = object2[key];
+
     const diffEntry = {};
 
     if (!_.has(object2, key)) {
