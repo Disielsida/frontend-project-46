@@ -12,24 +12,25 @@ const getDiff = (object1, object2) => {
     const value1 = object1[key];
     const value2 = object2[key];
 
-    const diffEntry = {};
-
     if (!_.has(object2, key)) {
-      Object.assign(diffEntry, { value: value1, status: 'deleted' });
-    } else if (!_.has(object1, key)) {
-      Object.assign(diffEntry, { value: value2, status: 'added' });
-    } else if (_.isPlainObject(value1) && _.isPlainObject(value2)) {
-      Object.assign(diffEntry, { children: getDiff(value1, value2), status: 'nested' });
-    } else if (_.isEqual(value1, value2)) {
-      Object.assign(diffEntry, { value: value1, status: 'unchanged' });
-    } else {
-      Object.assign(diffEntry, { value1, value2, status: 'changed' });
+      return { ...acc, [key]: { value: value1, status: 'deleted' } };
     }
 
-    return { ...acc, [key]: diffEntry };
+    if (!_.has(object1, key)) {
+      return { ...acc, [key]: { value: value2, status: 'added' } };
+    }
+
+    if (_.isPlainObject(value1) && _.isPlainObject(value2)) {
+      return { ...acc, [key]: { children: getDiff(value1, value2), status: 'nested' } };
+    }
+
+    if (_.isEqual(value1, value2)) {
+      return { ...acc, [key]: { value: value1, status: 'unchanged' } };
+    }
+
+    return { ...acc, [key]: { value1, value2, status: 'changed' } };
   }, {});
 
   return result;
 };
-
 export default getDiff;
