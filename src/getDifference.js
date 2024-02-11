@@ -11,20 +11,23 @@ const getDiff = (object1, object2) => {
   const result = keysUnion.reduce((acc, key) => {
     const value1 = object1[key];
     const value2 = object2[key];
+    let diffEntry;
+
     if (!_.has(object2, key)) {
-      return { ...acc, [key]: { value: value1, status: 'deleted' } };
+      diffEntry = { value: value1, status: 'deleted' };
+    } else if (!_.has(object1, key)) {
+      diffEntry = { value: value2, status: 'added' };
+    } else if (_.isPlainObject(value1) && _.isPlainObject(value2)) {
+      diffEntry = { children: getDiff(value1, value2), status: 'nested' };
+    } else if (_.isEqual(value1, value2)) {
+      diffEntry = { value: value1, status: 'unchanged' };
+    } else {
+      diffEntry = { value1, value2, status: 'changed' };
     }
-    if (!_.has(object1, key)) {
-      return { ...acc, [key]: { value: value2, status: 'added' } };
-    }
-    if (_.isPlainObject(value1) && _.isPlainObject(value2)) {
-      return { ...acc, [key]: { children: getDiff(value1, value2), status: 'nested' } };
-    }
-    if (_.isEqual(value1, value2)) {
-      return { ...acc, [key]: { value: value1, status: 'unchanged' } };
-    }
-    return { ...acc, [key]: { value1, value2, status: 'changed' } };
+
+    return { ...acc, [key]: diffEntry };
   }, {});
+
   return result;
 };
 
