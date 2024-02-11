@@ -1,10 +1,14 @@
 import _ from 'lodash';
 
-const getDiff = (object1, object2) => {
+const getKeysUnion = (object1, object2) => {
   const keys1 = Object.keys(object1);
   const keys2 = Object.keys(object2);
-  const allKeys = _.sortBy(_.union(keys1, keys2));
-  const result = allKeys.reduce((acc, key) => {
+  return _.sortBy(_.union(keys1, keys2));
+};
+
+const getDiff = (object1, object2) => {
+  const keysUnion = getKeysUnion(object1, object2);
+  const result = keysUnion.reduce((acc, key) => {
     const value1 = object1[key];
     const value2 = object2[key];
     if (!_.has(object2, key)) {
