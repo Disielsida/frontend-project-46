@@ -14,4 +14,7 @@
 [![function working with yaml/yml](img/working_yaml.png)](https://asciinema.org/a/p7IYqxOVDKigA1CSb5QdgVCwx)
 
 ## Example with nested structures with stylish format 
-[![function working with stylish](img/nested.png)](https://asciinema.org/a/p7IYqxOVDKigA1CSb5QdgVCwx)
+[![function working with stylish](img/nested.png)](https://asciinema.org/a/LuOAxGGp5NXJEFdnaIQAri3yI)
+
+## Example with nested structures with plain format 
+[![function working with stylish](img/plain.png)](https://asciinema.org/a/LLrk24i5AcdOddS6qtlnXNidV)

@@ -10,9 +10,17 @@ const getFixturePath = (fileName) => path.join(currentDirName, '..', '__fixtures
 const readFixture = (fileName) => fs.readFileSync(getFixturePath(fileName), 'utf-8');
 
 test("gendiffs's main flow with json", () => {
-  expect(genDiff(getFixturePath('file1.json'), getFixturePath('file2.json'))).toEqual(readFixture('expected_file_stylish.txt'));
+  expect(genDiff(getFixturePath('file1.json'), getFixturePath('file2.json'), 'stylish')).toEqual(readFixture('expected_file_stylish.txt'));
 });
 
 test("gendiffs's main flow with yaml/yml", () => {
-  expect(genDiff(getFixturePath('file1.yaml'), getFixturePath('file2.yaml'))).toEqual(readFixture('expected_file_stylish.txt'));
+  expect(genDiff(getFixturePath('file1.yaml'), getFixturePath('file2.yaml'), 'stylish')).toEqual(readFixture('expected_file_stylish.txt'));
+});
+
+test("gendiffs's plain flow with json", () => {
+  expect(genDiff(getFixturePath('file1.json'), getFixturePath('file2.json'), 'plain')).toEqual(readFixture('expected_file_plain.txt'));
+});
+
+test("gendiffs's plain flow with yaml/yml", () => {
+  expect(genDiff(getFixturePath('file1.yaml'), getFixturePath('file2.yaml'), 'plain')).toEqual(readFixture('expected_file_plain.txt'));
 });
