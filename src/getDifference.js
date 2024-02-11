@@ -6,26 +6,28 @@ const getKeysUnion = (object1, object2) => {
   return _.sortBy(_.union(keys1, keys2));
 };
 
+const getStatus = (value1, value2) => {
+  if (_.isEqual(value1, value2)) {
+    return 'unchanged';
+  } if (_.isPlainObject(value1) && _.isPlainObject(value2)) {
+    return 'nested';
+  } if (_.isUndefined(value1)) {
+    return 'added';
+  } if (_.isUndefined(value2)) {
+    return 'deleted';
+  }
+  return 'changed';
+};
+
 const getDiff = (object1, object2) => {
   const keysUnion = getKeysUnion(object1, object2);
   const result = keysUnion.reduce((acc, key) => {
     const value1 = object1[key];
     const value2 = object2[key];
-
-    let status;
-    if (!_.has(object1, key)) {
-      status = 'added';
-    } else if (!_.has(object2, key)) {
-      status = 'deleted';
-    } else if (_.isEqual(value1, value2)) {
-      status = 'unchanged';
-    } else if (_.isPlainObject(value1) && _.isPlainObject(value2)) {
-      status = 'nested';
-    } else {
-      status = 'changed';
-    }
+    const status = getStatus(value1, value2);
 
     const diffEntry = { status };
+
     if (status === 'nested') {
       diffEntry.children = getDiff(value1, value2);
     } else if (status === 'changed') {
