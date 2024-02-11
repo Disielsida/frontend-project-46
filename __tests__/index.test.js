@@ -24,3 +24,11 @@ test("gendiffs's plain flow with json", () => {
 test("gendiffs's plain flow with yaml/yml", () => {
   expect(genDiff(getFixturePath('file1.yaml'), getFixturePath('file2.yaml'), 'plain')).toEqual(readFixture('expected_file_plain.txt'));
 });
+
+test("gendiffs's json flow with json", () => {
+  expect(genDiff(getFixturePath('file1.json'), getFixturePath('file2.json'), 'json')).toEqual(readFixture('expected_file_json.txt'));
+});
+
+test("gendiffs's json flow with yaml/yml", () => {
+  expect(genDiff(getFixturePath('file1.yaml'), getFixturePath('file2.yaml'), 'json')).toEqual(readFixture('expected_file_json.txt'));
+});

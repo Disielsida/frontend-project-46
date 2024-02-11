@@ -18,3 +18,6 @@
 
 ## Example with nested structures with plain format 
 [![function working with stylish](img/plain.png)](https://asciinema.org/a/LLrk24i5AcdOddS6qtlnXNidV)
+
+## Example with nested structures with json format 
+[![function working with stylish](img/json.png)](https://asciinema.org/a/25tKCRye40nDJoUqm49LyoTZ4)

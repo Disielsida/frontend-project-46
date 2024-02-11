@@ -7,6 +7,8 @@ const getFormat = (diffObject, nameFormat) => {
       return getStylish(diffObject);
     case 'plain':
       return getPlain(diffObject);
+    case 'json':
+      return JSON.stringify(diffObject);
     default:
       throw new Error(`Invalid format - ${nameFormat}`);
   }
