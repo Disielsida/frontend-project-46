@@ -13,7 +13,7 @@ To get started with Difference Calculator, follow these simple steps:
 
 3. Install dependencies:
     **npm install**
-    
+
 4. Linking for System-wide Access:
     **sudo npm link**
 
@@ -24,11 +24,9 @@ Now you can use this tool on your computer!
 [![Maintainability](https://api.codeclimate.com/v1/badges/6880ab95092b68885319/maintainability)](https://codeclimate.com/github/Disielsida/frontend-project-46/maintainability)
 [![project-check](https://github.com/Disielsida/frontend-project-46/actions/workflows/check-project.yml/badge.svg)](https://github.com/Disielsida/frontend-project-46/actions/workflows/check-project.yml)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/6880ab95092b68885319/test_coverage)](https://codeclimate.com/github/Disielsida/frontend-project-46/test_coverage)
-
----
  
-## Example with json
-[![function working with json](img/working.png)](https://asciinema.org/a/p7IYqxOVDKigA1CSb5QdgVCwx)
+## Example with flat json files
+[![Working with flatt files](img/flat-json.png)](https://asciinema.org/a/QoBKJVHOH4NEDgduOHT7wu0id)
 
 ## Example with yaml/yml
 [![function working with yaml/yml](img/working_yaml.png)](https://asciinema.org/a/p7IYqxOVDKigA1CSb5QdgVCwx)
@@ -41,3 +39,7 @@ Now you can use this tool on your computer!
 
 ## Example with nested structures with json format 
 [![function working with stylish](img/json.png)](https://asciinema.org/a/25tKCRye40nDJoUqm49LyoTZ4)
+
+## System Requirements
+This project requires Node.js version 20.10.0 or higher.
+Please make sure you have Node.js installed before proceeding with the setup.
