@@ -25,8 +25,8 @@ Now you can use this tool on your computer!
 [![project-check](https://github.com/Disielsida/frontend-project-46/actions/workflows/check-project.yml/badge.svg)](https://github.com/Disielsida/frontend-project-46/actions/workflows/check-project.yml)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/6880ab95092b68885319/test_coverage)](https://codeclimate.com/github/Disielsida/frontend-project-46/test_coverage)
  
-## Example with flat json files
-[![Working with flatt files](img/flat-json.png)](https://asciinema.org/a/QoBKJVHOH4NEDgduOHT7wu0id)
+## Working with flat json files
+[![Working with flat files](img/flat-json.png)](https://asciinema.org/a/QoBKJVHOH4NEDgduOHT7wu0id)
 
 ## Example with yaml/yml
 [![function working with yaml/yml](img/working_yaml.png)](https://asciinema.org/a/p7IYqxOVDKigA1CSb5QdgVCwx)
