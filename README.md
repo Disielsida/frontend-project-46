@@ -26,7 +26,7 @@ Now you can use this tool on your computer!
 [![Test Coverage](https://api.codeclimate.com/v1/badges/6880ab95092b68885319/test_coverage)](https://codeclimate.com/github/Disielsida/frontend-project-46/test_coverage)
  
 ## Working with flat json files
-![alt text](./img/flat-json.png)
+![alt text](img/flat-json.png)
 
 ## System Requirements
 This project requires Node.js version 20.10.0 or higher.
