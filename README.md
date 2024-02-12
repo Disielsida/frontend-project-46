@@ -5,16 +5,17 @@ Diff calculator is a command-line tool that analyzes two files with data in JSON
 ## Installation
 To get started with Difference Calculator, follow these simple steps:
 
-1. **Clone this repository:**
-    git clone https://github.com/Disielsida/frontend-project-46.git
+1. Clone this repository:
+    **git clone https://github.com/Disielsida/frontend-project-46.git**
 
-2. **Navigate to the project directory:**
-    cd frontend-project-46
+2. Navigate to the project directory:
+    **cd frontend-project-46**
 
-3. **Install dependencies:**
-    npm install
-4. **Linking for System-wide Access:**
-    sudo npm link
+3. Install dependencies:
+    **npm install**
+    
+4. Linking for System-wide Access:
+    **sudo npm link**
 
 Now you can use this tool on your computer!
 
