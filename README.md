@@ -26,19 +26,19 @@ Now you can use this tool on your computer!
 [![Test Coverage](https://api.codeclimate.com/v1/badges/6880ab95092b68885319/test_coverage)](https://codeclimate.com/github/Disielsida/frontend-project-46/test_coverage)
  
 ## Working with flat json files
-![Working with flat json files](img/flat-json.png)(https://asciinema.org/a/QoBKJVHOH4NEDgduOHT7wu0id)
+[![Working with flat json files](img/flat-json.png)](https://asciinema.org/a/QoBKJVHOH4NEDgduOHT7wu0id)
 
 ## Working with flat yaml/yml files
-![Working with flat yaml/yml files](img/flat-yaml.png)(https://asciinema.org/a/ZBgfb5ubtmRU9uhAoJ8KFlsPb)
+[![Working with flat yaml/yml files](img/flat-yaml.png)](https://asciinema.org/a/ZBgfb5ubtmRU9uhAoJ8KFlsPb)
 
 ## Working with nested in stylish format
-![Working with nested files in stylish](img/nested-stylish.png)(https://asciinema.org/a/LuOAxGGp5NXJEFdnaIQAri3yI)
+[![Working with nested files in stylish](img/nested-stylish.png)](https://asciinema.org/a/LuOAxGGp5NXJEFdnaIQAri3yI)
 
 ## Working with nested files in plain format
-![Working with nested files in plain](img/nested-plain.png)(https://asciinema.org/a/LLrk24i5AcdOddS6qtlnXNidV)
+[![Working with nested files in plain](img/nested-plain.png)](https://asciinema.org/a/LLrk24i5AcdOddS6qtlnXNidV)
 
 ## Working with nested files in json format
-![Working with nested files in json ](img/nested-json.png)(https://asciinema.org/a/25tKCRye40nDJoUqm49LyoTZ4)
+[![Working with nested files in json ](img/nested-json.png)](https://asciinema.org/a/25tKCRye40nDJoUqm49LyoTZ4)
 
 ## System Requirements
 This project requires Node.js version 20.10.0 or higher.
