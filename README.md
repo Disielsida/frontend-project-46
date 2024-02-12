@@ -28,19 +28,6 @@ Now you can use this tool on your computer!
 ## Working with flat json files
 [![Working with flat json files](./img/flat-json.png)](https://asciinema.org/a/QoBKJVHOH4NEDgduOHT7wu0id)
 
-
-## Example with yaml/yml
-[![function working with yaml/yml](img/working_yaml.png)](https://asciinema.org/a/p7IYqxOVDKigA1CSb5QdgVCwx)
-
-## Example with nested structures with stylish format 
-[![function working with stylish](img/nested.png)](https://asciinema.org/a/LuOAxGGp5NXJEFdnaIQAri3yI)
-
-## Example with nested structures with plain format 
-[![function working with stylish](img/plain.png)](https://asciinema.org/a/LLrk24i5AcdOddS6qtlnXNidV)
-
-## Example with nested structures with json format 
-[![function working with stylish](img/json.png)](https://asciinema.org/a/25tKCRye40nDJoUqm49LyoTZ4)
-
 ## System Requirements
 This project requires Node.js version 20.10.0 or higher.
 Please make sure you have Node.js installed before proceeding with the setup.
