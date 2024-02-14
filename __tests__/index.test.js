@@ -9,26 +9,12 @@ const currentDirName = path.dirname(currentFileName);
 const getFixturePath = (fileName) => path.join(currentDirName, '..', '__fixtures__', fileName);
 const readFixture = (fileName) => fs.readFileSync(getFixturePath(fileName), 'utf-8');
 
-test("gendiffs's main flow with json", () => {
-  expect(genDiff(getFixturePath('file1.json'), getFixturePath('file2.json'), 'stylish')).toEqual(readFixture('expected_file_stylish.txt'));
-});
+describe.each(['stylish', 'plain', 'json'])('gendiffs flow with %s format', (format) => {
+  test.each(['json', 'yaml'])('with %s files', (extension) => {
+    const filePath1 = getFixturePath(`file1.${extension}`);
+    const filePath2 = getFixturePath(`file2.${extension}`);
+    const expectedOutput = readFixture(`expected_file_${format}.txt`);
 
-test("gendiffs's main flow with yaml/yml", () => {
-  expect(genDiff(getFixturePath('file1.yaml'), getFixturePath('file2.yaml'), 'stylish')).toEqual(readFixture('expected_file_stylish.txt'));
-});
-
-test("gendiffs's plain flow with json", () => {
-  expect(genDiff(getFixturePath('file1.json'), getFixturePath('file2.json'), 'plain')).toEqual(readFixture('expected_file_plain.txt'));
-});
-
-test("gendiffs's plain flow with yaml/yml", () => {
-  expect(genDiff(getFixturePath('file1.yaml'), getFixturePath('file2.yaml'), 'plain')).toEqual(readFixture('expected_file_plain.txt'));
-});
-
-test("gendiffs's json flow with json", () => {
-  expect(genDiff(getFixturePath('file1.json'), getFixturePath('file2.json'), 'json')).toEqual(readFixture('expected_file_json.txt'));
-});
-
-test("gendiffs's json flow with yaml/yml", () => {
-  expect(genDiff(getFixturePath('file1.yaml'), getFixturePath('file2.yaml'), 'json')).toEqual(readFixture('expected_file_json.txt'));
+    expect(genDiff(filePath1, filePath2, format)).toEqual(expectedOutput);
+  });
 });
