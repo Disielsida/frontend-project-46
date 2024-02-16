@@ -8,7 +8,7 @@ const getFormat = (diffObject, nameFormat) => {
     case 'plain':
       return getPlain(diffObject);
     case 'json':
-      return JSON.stringify(diffObject);
+      return JSON.stringify(diffObject, null, 2);
     default:
       throw new Error(`Invalid format - ${nameFormat}`);
   }
